@@ -1,0 +1,3 @@
+/home/dxs/test/surfacereconstruction/build/CMakeFiles/rebuild_cache.dir
+/home/dxs/test/surfacereconstruction/build/CMakeFiles/edit_cache.dir
+/home/dxs/test/surfacereconstruction/build/CMakeFiles/surface_reconstruction.dir
