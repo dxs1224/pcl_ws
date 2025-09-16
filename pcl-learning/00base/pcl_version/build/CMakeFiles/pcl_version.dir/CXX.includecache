@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/dxs/pcl_ws/pcl-learning/00base/pcl_version/pcl_version.cpp
+iostream
+-
+pcl/pcl_config.h
+-
+
+/usr/include/pcl-1.10/pcl/pcl_config.h
+
