@@ -27,6 +27,8 @@ pcl/visualization/pcl_visualizer.h
 -
 boost/thread/thread.hpp
 -
+chrono
+-
 
 /usr/include/eigen3/Eigen/Cholesky
 Core
