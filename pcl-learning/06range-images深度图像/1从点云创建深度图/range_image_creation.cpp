@@ -49,6 +49,7 @@ int main(int argc, char **argv)
     float maxAngleHeight = (float)(180.0f * (M_PI / 180.0f)); // 弧度180°
     //传感器的采集位置
     Eigen::Affine3f sensorPose = (Eigen::Affine3f)Eigen::Translation3f(0.0f, 0.0f, 0.0f);
+    // sensorPose.rotate(Eigen::AngleAxisf(M_PI/2, Eigen::Vector3f::UnitX()));
     //深度图像遵循坐标系统
     pcl::RangeImage::CoordinateFrame coordinate_frame = pcl::RangeImage::CAMERA_FRAME;
     float noiseLevel = 0.00; //noise_level获取深度图像深度时，近邻点对查询点距离值的影响水平
@@ -78,19 +79,19 @@ int main(int argc, char **argv)
     // -----Open 3D viewer and add point cloud-----
     // --------------------------------------------
     pcl::visualization::PCLVisualizer viewer("3D Viewer");
-    viewer.setBackgroundColor(1, 1, 1);
+    viewer.setBackgroundColor(0, 0, 0);
     // 添加深度图点云
-    pcl::visualization::PointCloudColorHandlerCustom<pcl::PointWithRange> range_image_color_handler(range_image_ptr, 0, 0, 0);
+    pcl::visualization::PointCloudColorHandlerCustom<pcl::PointWithRange> range_image_color_handler(range_image_ptr, 255, 0, 0);
     viewer.addPointCloud(range_image_ptr, range_image_color_handler, "range image");
     viewer.setPointCloudRenderingProperties(pcl::visualization::PCL_VISUALIZER_POINT_SIZE, 4, "range image");
 
     // 添加原始点云
-    pcl::visualization::PointCloudColorHandlerCustom<pcl::PointXYZ> org_image_color_handler(pointCloudPtr, 255, 100, 0);
-    viewer.addPointCloud(pointCloudPtr, org_image_color_handler, "orginal image");
-    viewer.setPointCloudRenderingProperties(pcl::visualization::PCL_VISUALIZER_POINT_SIZE, 2, "orginal image");
+    // pcl::visualization::PointCloudColorHandlerCustom<pcl::PointXYZ> org_image_color_handler(pointCloudPtr, 255, 100, 0);
+    // viewer.addPointCloud(pointCloudPtr, org_image_color_handler, "orginal image");
+    // viewer.setPointCloudRenderingProperties(pcl::visualization::PCL_VISUALIZER_POINT_SIZE, 2, "orginal image");
 
     viewer.initCameraParameters();
-    viewer.addCoordinateSystem(1.0);
+    viewer.addCoordinateSystem(1); // 添加坐标系
 
     //--------------------
     // -----Main loop-----
