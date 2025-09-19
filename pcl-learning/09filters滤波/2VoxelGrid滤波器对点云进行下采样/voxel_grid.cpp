@@ -23,8 +23,8 @@ main (int argc, char** argv)
   //点云对象的读取
   pcl::PCDReader reader;
  
-  reader.read ("../table_scene_lms400.pcd", *cloud);    //读取点云到cloud中
-
+  // reader.read ("../table_scene_lms400.pcd", *cloud);    //读取点云到cloud中
+  reader.read("/home/dxs/output.pcd", *cloud);
   std::cerr << "PointCloud before filtering: " << cloud->width * cloud->height 
        << " data points (" << pcl::getFieldsList (*cloud) << ").";
 
@@ -33,15 +33,18 @@ main (int argc, char** argv)
 **********************************************************************************/
   pcl::VoxelGrid<pcl::PCLPointCloud2> sor;  //创建滤波对象
   sor.setInputCloud (cloud);            //设置需要过滤的点云给滤波对象
-  sor.setLeafSize (0.01f, 0.01f, 0.01f);  //设置滤波时创建的体素体积为1cm的立方体
+  sor.setLeafSize (0.1f, 0.1f, 0.1f);  //设置滤波时创建的体素体积为1cm的立方体
   sor.filter (*cloud_filtered);           //执行滤波处理，存储输出
 
   std::cerr << "PointCloud after filtering: " << cloud_filtered->width * cloud_filtered->height 
        << " data points (" << pcl::getFieldsList (*cloud_filtered) << ").";
 
   pcl::PCDWriter writer;
-  writer.write ("../table_scene_lms400_downsampled.pcd", *cloud_filtered, 
-         Eigen::Vector4f::Zero (), Eigen::Quaternionf::Identity (), false);
+  // writer.write ("../table_scene_lms400_downsampled.pcd", *cloud_filtered, 
+        //  Eigen::Vector4f::Zero (), Eigen::Quaternionf::Identity (), false);
+
+  writer.write("/home/dxs/output_downsampled.pcd", *cloud_filtered, 
+        Eigen::Vector4f::Zero (), Eigen::Quaternionf::Identity (), false);
 
   return (0);
 }
