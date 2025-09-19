@@ -1,0 +1,4 @@
+/home/dxs/pcl_ws/pcl-learning/08IO输入输出/2read_pcd/build/CMakeFiles/rebuild_cache.dir
+/home/dxs/pcl_ws/pcl-learning/08IO输入输出/2read_pcd/build/CMakeFiles/edit_cache.dir
+/home/dxs/pcl_ws/pcl-learning/08IO输入输出/2read_pcd/build/CMakeFiles/read_pcd.dir
+/home/dxs/pcl_ws/pcl-learning/08IO输入输出/2read_pcd/build/CMakeFiles/write_pcd.o.dir

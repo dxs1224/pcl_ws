@@ -1,0 +1,3 @@
+/home/dxs/pcl_ws/pcl-learning/09filters滤波/5从一个点云中提取索引/build/CMakeFiles/rebuild_cache.dir
+/home/dxs/pcl_ws/pcl-learning/09filters滤波/5从一个点云中提取索引/build/CMakeFiles/edit_cache.dir
+/home/dxs/pcl_ws/pcl-learning/09filters滤波/5从一个点云中提取索引/build/CMakeFiles/extract_indices.dir
