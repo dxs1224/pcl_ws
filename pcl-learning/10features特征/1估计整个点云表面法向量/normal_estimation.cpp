@@ -19,7 +19,7 @@ main ()
  {
 //打开点云代码
 pcl::PointCloud<pcl::PointXYZ>::Ptr cloud (new pcl::PointCloud<pcl::PointXYZ>);
-pcl::io::loadPCDFile ("../table_scene_lms400.pcd", *cloud);
+pcl::io::loadPCDFile ("/home/dxs/output.pcd", *cloud);
 
 //创建法线估计估计向量
 pcl::NormalEstimation<pcl::PointXYZ, pcl::Normal> ne;
@@ -38,7 +38,7 @@ ne.compute(*cloud_normals);
 
 // 存储特征值为点云
 pcl::PCDWriter writer;
-writer.write<pcl::Normal> ( "../table_cloud_normals.pcd" , *cloud_normals, false); // 保存文件
+writer.write<pcl::Normal> ( "../output_normal.pcd" , *cloud_normals, false); // 保存文件
 //可视化
 pcl::visualization::PCLVisualizer viewer("PCL Viewer");
 viewer.setBackgroundColor (0.0, 0.0, 0.0);
